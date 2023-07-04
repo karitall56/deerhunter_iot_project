@@ -22,16 +22,16 @@ prevhour=presenttime[3]
 led = Pin("LED", Pin.OUT)   # led pin initialization for Raspberry Pi Pico W
 
 # Wireless network
-WIFI_SSID = "Telia-B7F738"
-WIFI_PASS = "Y6mJ8JpaFe6fKrtt" # No this is not our regular password. :)
+WIFI_SSID = "TBA"
+WIFI_PASS = "TBA" # No this is not our regular password. :)
 
 # Adafruit IO (AIO) configuration
 AIO_SERVER = "io.adafruit.com"
 AIO_PORT = 1883
-AIO_USER = "karitall"
-AIO_KEY = "aio_diQe94Bopg3E8c1AGiWkBl1raLyz"
+AIO_USER = "user"
+AIO_KEY = "key"
 AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())  # Can be anything
-AIO_DEER_FEED = "karitall/feeds/deerhunter"
+AIO_DEER_FEED = "name"
 client = MQTTClient(AIO_CLIENT_ID, AIO_SERVER, AIO_PORT, AIO_USER, AIO_KEY)
 
 led = machine.Pin("LED", machine.Pin.OUT)
@@ -85,7 +85,7 @@ def do_connect():
         wlan.active(True)                       # Activate network interface
         # set power mode to get WiFi power-saving off (if needed)
         wlan.config(pm = 0xa11140)
-        wlan.connect("Telia-B7F738", "Y6mJ8JpaFe6fKrtt")  # Your WiFi Credential
+        wlan.connect("WiFi", "password")  # Your WiFi Credential
         print('Waiting for connection...', end='')
         # Check if it is connected otherwise wait
         while not wlan.isconnected() and wlan.status() >= 0:
