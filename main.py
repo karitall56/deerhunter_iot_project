@@ -32,7 +32,7 @@ AIO_USER = "user"
 AIO_KEY = "key"
 AIO_CLIENT_ID = ubinascii.hexlify(machine.unique_id())  # Can be anything
 AIO_DEER_FEED = "name"
-client = MQTTClient(AIO_CLIENT_ID, AIO_SERVER, AIO_PORT, AIO_USER, AIO_KEY)
+#client = MQTTClient(AIO_CLIENT_ID, AIO_SERVER, AIO_PORT, AIO_USER, AIO_KEY)
 
 led = machine.Pin("LED", machine.Pin.OUT)
 PirSensor = Pin(28, Pin.IN, Pin.PULL_DOWN)
